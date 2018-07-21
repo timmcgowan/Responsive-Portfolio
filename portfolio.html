@@ -8,19 +8,81 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="next" href="/index.html">
+  <meta name="description" content="Coding Examples, fun project ideas, and other odd things.">
 </head>
 <body>
 
 <div class="wrapper">
+<script>
+    var header = document.querySelector('.o-header')
+    var navToggle = document.querySelector('.c-nav-toggle')
+    var searchToggle = document.querySelector('.c-search-toggle')
 
+    navToggle.addEventListener('click', function (event) {
+        event.preventDefault()
+
+        var navToggleInner = document.querySelector('.c-nav-toggle__inner')
+
+        header.classList.toggle('o-header--nav-open')
+        navToggle.classList.toggle('c-nav-toggle--open')
+        navToggleInner.classList.toggle('c-nav-toggle__inner--open')
+    })
+
+    searchToggle.addEventListener('click', function (event) {
+        event.preventDefault()
+
+        var productsLink = document.querySelector('.c-big-link--products')
+        var searchContainer = document.querySelector('.o-header__search')
+        var searchInput = document.querySelector('.c-search__input')
+
+        searchInput.blur()
+        productsLink.classList.toggle('c-big-link--search-open')
+        searchToggle.classList.toggle('c-search-toggle--open')
+        searchContainer.classList.toggle('o-header__search--open')
+
+        if (searchContainer.classList.contains('o-header__search--open')) {
+            searchInput.focus()
+        }
+    })
+</script>  
 <!-- NavBar -->
-<header id="masthead" class="navbar bg-dark">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+<header id="masthead" class="navbar" style="background-color: rgb(41, 48, 61);">
+    <nav class=" navbar navbar-expand-md navbar-dark" style="background-color: rgb(41, 48, 61);">
       <a class="navbar-brand" href="index.html">Tim McGowan</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">About<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+ <!--   Test navhead
+<header id="masthead" class="navbar bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-brand">
+            <a class="navbar-brand" href="index.html">Tim McGowan</a>
+        </div>
+    <div>
+     <div class="nav-link-group">
+        <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="navbarlist collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="index.html">About<span class="sr-only">(current)</span></a>
@@ -33,9 +95,10 @@
           </li>
         </ul>
       </div>
+    </div>
     </nav>
     </header>
-
+  -->
   <main class="container">
     <section class="main-section">
       <h1>Portfolio</h1>
@@ -53,6 +116,14 @@
         <a href="https://timmcgowan.github.io/rock-paper-scissors.html"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Rock-paper-scissors.svg"  alt="Rock Paper Scissors"></a>
         <h3>Rock Paper Scissors</h3>
       </div>
+
+      https://www.raspberrypi.org/homepage-9df4b/static/raspberry-pi-3B+.a8ffc54f.svg
+
+      https://www.raspberrypi.org/homepage-9df4b/static/hello-world.02d4e78d.png
+
+
+      
+
 
     </section>
   </main>
